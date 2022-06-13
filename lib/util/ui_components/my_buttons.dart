@@ -13,6 +13,28 @@ class _MyButtonsState extends State<MyButtons> {
       appBar: AppBar(
         title: const Text("Button Widgets"),
       ),
+      body: Container(
+        child: Column(
+          // mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const Text("I am Some Description",
+            style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),
+            ),
+            ElevatedButton(
+                onPressed: (){},
+                child: const Text(
+                    "Elevated Button",
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                )
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

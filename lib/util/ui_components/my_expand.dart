@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-class Expand extends StatefulWidget {
-  const Expand({Key? key}) : super(key: key);
+class MyExpand extends StatefulWidget {
+  const MyExpand({Key? key}) : super(key: key);
 
   @override
-  State<Expand> createState() => _ExpandState();
+  State<MyExpand> createState() => _MyExpandState();
 }
 
-class _ExpandState extends State<Expand> {
+class _MyExpandState extends State<MyExpand> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

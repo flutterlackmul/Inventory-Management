@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_api_application/Model/dealer_info.dart';
+import 'package:flutter_api_application/View/Screens/dealer_detail.dart';
 class Dealers extends StatefulWidget {
   final  DealersInfo dealersInfo;
   const Dealers({Key? key, required this.dealersInfo}) : super(key: key);
@@ -39,21 +40,16 @@ class _DealersState extends State<Dealers> {
                    child: ListView.builder(
                     // the number of items in the list
                       itemCount: listDealers.length,
-                      // display each item of the product list
-
+                      // display each item of the dealer list
                       itemBuilder: (context, index) {
                         return ListTile(
                           title: Text("${listDealers[index].dealerName}",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),) ,
                           trailing: Text("${listDealers[index].dealerCode}"),
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=> DealerDetail(DealersDetail:listDealers[index],DealerId: listDealers[index].dealerId)));
+                          },
                         );
-                        // return Card(
-                        //   // In many cases, the key isn't mandatory
-                        //   key: UniqueKey(),
-                        //   child: Padding(
-                        //       padding: const EdgeInsets.all(10),
-                        //       child: Text("Dealer Name :  ${listDealers[index].dealerName}")
-                        //   ),
-                        // );
+                        
                       }),
                  ),
                ),

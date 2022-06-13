@@ -9,7 +9,7 @@ import 'package:get_storage/get_storage.dart';
 class ApiController {
 var dio = Dio();
 //var base_url = "http://127.0.0.1:8000/api/";
-var base_url = "http://192.168.0.104:80/api/";
+var base_url = "http://192.168.68.130:80/api/";
 var postParams = {'deviceInfo':34};
 Future<Login?> getToken(String user_name, String password) async {
   try{
