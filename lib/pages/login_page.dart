@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_api_application/Model/login.dart';
-import 'package:flutter_api_application/View/Screens/Home_Screen.dart';
 import 'package:flutter_api_application/util/common_util.dart';
 import 'package:get_storage/get_storage.dart';
 
@@ -106,7 +105,7 @@ class _LoginPageState extends State<LoginPage> {
                                            GetStorage().write('locationId',loginData.locationId);
                                            GetStorage().write('accessToken',loginData.token);
                                             if(!mounted) return;
-                                           Navigator.push(context,MaterialPageRoute(builder: (context)=>HomeScreen()));
+                                           Navigator.pushNamed(context,'Home');
                                          }
                                     },
                                     child: const Text('signup'),
