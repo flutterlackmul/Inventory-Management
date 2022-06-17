@@ -10,4 +10,13 @@ class CommonUtil{
       ),
     );
   }
+
+  AppBar customAppbar (String title)
+  {
+   return AppBar(
+      title: Text(title),
+      backgroundColor: Colors.deepOrange,
+      foregroundColor: Colors.tealAccent,
+    );
+  }
 }

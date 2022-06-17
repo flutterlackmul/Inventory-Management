@@ -100,3 +100,27 @@ class _MyButtonsState extends State<MyButtons> {
     );
   }
 }
+
+
+// ElevatedButton(
+// child: Text('Button'),
+// onPressed: () {},
+// style: ElevatedButton.styleFrom({
+// Color primary, // set the background color
+// Color onPrimary,
+// Color onSurface,
+// Color shadowColor,
+// double elevation,
+// TextStyle textStyle,
+// EdgeInsetsGeometry padding,
+// Size minimumSize,
+// BorderSide side,
+// OutlinedBorder shape,
+// MouseCursor enabledMouseCursor,
+// MouseCursor disabledMouseCursor,
+// VisualDensity visualDensity,
+// MaterialTapTargetSize tapTargetSize,
+// Duration animationDuration,
+// bool enableFeedback
+// }),
+// ),

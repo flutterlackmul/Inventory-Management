@@ -99,11 +99,11 @@ class _LoginPageState extends State<LoginPage> {
                                       print("User Name : ${GetStorage().read('username')}");
                                       Login? loginData = await ApiController().getToken(_usernameController.text, _passwordController.text);
                                       await Future.delayed(const Duration(seconds: 2));
-                                       if(loginData!.success==1)
+                                       if(loginData?.success==1)
                                          {
                                            GetStorage().write('logged',true);
-                                           GetStorage().write('locationId',loginData.locationId);
-                                           GetStorage().write('accessToken',loginData.token);
+                                           GetStorage().write('locationId',loginData?.locationId);
+                                           GetStorage().write('accessToken',loginData?.token);
                                             if(!mounted) return;
                                            Navigator.pushNamed(context,'Home');
                                          }

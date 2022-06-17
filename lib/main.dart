@@ -3,10 +3,9 @@ import 'package:get_storage/get_storage.dart';
 import 'package:flutter_api_application/util/constants.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_api_application/routes/route.dart' as route;
-Future main() async  {
-  await GetStorage.init();
-  WidgetsFlutterBinding.ensureInitialized();
-  Constants.prefs =   await SharedPreferences.getInstance();
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
+void main()  {
   runApp(MyApp());
 }
 class MyApp extends StatelessWidget {
@@ -14,7 +13,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: "Flutter Inventory",
       debugShowCheckedModeBanner: false,
       onGenerateRoute: route.controller,
@@ -25,5 +24,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+
 
 

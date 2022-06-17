@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_api_application/Model/login.dart';
 import 'package:flutter_api_application/Model/dealer_info.dart';
+import 'package:flutter_api_application/Model/products_model.dart';
 import 'package:flutter_api_application/View/Screens/dealers.dart';
 import 'package:flutter_api_application/network/api_client.dart';
 import 'package:get_storage/get_storage.dart';
 class ApiController {
 var dio = Dio();
 //var base_url = "http://127.0.0.1:8000/api/";
-var base_url = "http://192.168.68.130:80/api/";
+var base_url = "http://192.168.0.104:80/api/";
 var postParams = {'deviceInfo':34};
 Future<Login?> getToken(String user_name, String password) async {
   try{
@@ -55,4 +56,27 @@ Future<DealersInfo?> getDealerInfo() async{
     return null;
   }
 }
+
+  Future<ProductsModel?> getProductInfo() async{
+    try{
+      var targetApi = "get-product-list" ;
+      var finalApiUrl = base_url+targetApi;
+     // postParams['location_id']=GetStorage().read('locationId');
+      var token = GetStorage().read('accessToken');
+      var response = await ApiClient().postDataWithToken(finalApiUrl,postParams,token);
+
+      var productInfoData ;
+      if(response.statusCode==200){
+        var productInfoData = ProductsModel.fromJson(response.data);
+        return productInfoData;
+      }
+      else
+      {
+        return null;
+      }
+    }
+    catch(e){
+      return null;
+    }
+  }
 }
